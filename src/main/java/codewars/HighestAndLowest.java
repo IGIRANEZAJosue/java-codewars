@@ -6,8 +6,13 @@ public class HighestAndLowest {
 
     public static String highAndLow(String numbers) {
         String[] numArr = numbers.split(" ");
-        Arrays.sort(numArr);
-        return (numArr[numArr.length - 1] + " " + numArr[0]);
+        int[] nums = new int[numArr.length];
+        for (int i = 0; i < numArr.length; i++) {
+            nums[i] = Integer.parseInt(numArr[i]);
+        }
+        Arrays.sort(nums);
+
+        return (nums[numArr.length - 1] + " " + nums[0]);
     }
 
     public static void main(String[] args) {
