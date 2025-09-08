@@ -1,14 +1,10 @@
 package codewars;
 
+import java.util.Arrays;
+
 public class PositiveSum {
     public static int sum(int[] arr){
-        int sum = 0;
-        for(int num: arr){
-            if(num > 0){
-                sum += num;
-            }
-        }
-        return sum;
+        return Arrays.stream(arr).filter(v -> v > 0).sum();
     }
 
     public static void main(String[] args) {
