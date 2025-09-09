@@ -3,11 +3,11 @@ package codewars;
 public class ReverseString {
 
     public static String reverseString(String str){
-        String reversedString = "";
+        StringBuilder reversedString = new StringBuilder();
         for(int i = str.length() - 1; i >= 0; i--) {
-            reversedString += str.charAt(i);
+            reversedString.append(str.charAt(i));
         }
-        return reversedString;
+        return reversedString.toString();
     }
 
     public static void main(String[] args) {
