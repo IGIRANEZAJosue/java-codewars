@@ -4,7 +4,7 @@ public class NumberToString {
 
     public static String numberToString(int num) {
         return Integer.toString(num);
-        // You can also use String.valueOf(num);
+        // You can also use String.valueOf(num) or just string concatenation.
     }
 
     public static void main(String[] args) {
