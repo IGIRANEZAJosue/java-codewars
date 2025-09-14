@@ -19,7 +19,7 @@ package codewars;
 public class JadenCase {
 
     public static String toJadenCase(String phrase) {
-        if(phrase == null || "".equals(phrase)){
+        if(phrase == null || phrase.isEmpty()){ // Or use phrase.length() == 0
             return null;
         }
 
