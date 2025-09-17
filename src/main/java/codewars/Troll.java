@@ -14,16 +14,7 @@ package codewars;
 public class Troll {
 
     public static String disemvowel(String str) {
-        StringBuilder result = new StringBuilder();
-        String vowels = "aeiouAEIOU";
-
-        for (int i = 0; i < str.length(); i++) {
-            if(!vowels.contains(String.valueOf(str.charAt(i)))){
-                result.append(str.charAt(i));
-            }
-        }
-
-        return result.toString();
+        return str.replaceAll("[aeiouAEIOU]", "");
     }
 
     public static void main(String[] args) {
