@@ -12,22 +12,15 @@ Examples
 
 package codewars;
 
-import java.util.Arrays;
-
 public class DRoot {
 
     public static int digital_root(int n) {
-        int sum = Arrays.stream(String.valueOf(n).split(""))
-                                        .map(Integer::parseInt)
-                                        .reduce(0, Integer::sum);
+        if(n == 0) return 0;
 
-        while(sum / 10 >= 1){
-            sum = Arrays.stream(String.valueOf(sum).split(""))
-                    .map(Integer::parseInt)
-                    .reduce(0, Integer::sum);
-        }
+        // The mathematical formula for calculating the digital root of a number is n % 9;
+        // but here we're adding 1 in order to handle cases of 9, 19, 27,etc.. where n % 9 might be zero.
+        return 1 + (n - 1) % 9;
 
-        return sum;
     }
 
     public static void main(String[] args) {
