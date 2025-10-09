@@ -7,17 +7,14 @@
 
 package codewars;
 
-import java.util.Arrays;
-
 public class PangramChecker {
 
     public static boolean check(String sentence){
-        String alphabets = "abcdefghijklmnopqrstuvwxyz";
-        int letterCount = Arrays.stream(sentence.toLowerCase().split(""))
-                                .filter(alphabets::contains)
-                                .distinct()
-                                .toList()
-                                .size();
+        long letterCount = sentence.chars()
+                                    .map(Character::toLowerCase)
+                                    .filter(Character::isAlphabetic)
+                                    .distinct()
+                                    .count();
 
         return letterCount == 26;
     }
