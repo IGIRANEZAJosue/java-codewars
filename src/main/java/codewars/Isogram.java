@@ -11,17 +11,10 @@ Example: (Input --> Output)
 
 package codewars;
 
-import java.util.Arrays;
-import java.util.Set;
-import java.util.stream.Collectors;
-
 public class Isogram {
 
     public static boolean  isIsogram(String str) {
-        if(str.isEmpty()) return true;
-        Set<String> distincts = Arrays.stream(str.toLowerCase().split("")).collect(Collectors.toSet());
-
-        return distincts.size() == str.length();
+        return str.length() == str.toLowerCase().chars().distinct().count();
     }
 
     public static void main(String[] args) {
