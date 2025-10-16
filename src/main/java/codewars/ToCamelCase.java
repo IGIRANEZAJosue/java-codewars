@@ -14,18 +14,16 @@ Examples
 
 package codewars;
 
+import java.util.Arrays;
+
 public class ToCamelCase {
 
     static String toCamelCase(String s){
-        String[] words =  s.replaceAll("[-_]", " ").split(" ");
-        StringBuilder result = new StringBuilder(words[0]);
+        String[] words =  s.split("[-_]");
 
-        for (int i = 1; i < words.length; i++) {
-            result.append(words[i].substring(0, 1).toUpperCase())
-                    .append(words[i].substring(1));
-        }
-
-        return result.toString();
+        return Arrays.stream(words, 1 , words.length)
+                    .map(w -> w.substring(0,1).toUpperCase() + w.substring(1))
+                    .reduce(words[0], String::concat);
     }
 
     public static void main(String[] args) {
